@@ -78,7 +78,7 @@ pip install -r requirements.txt
 # Run Flask server
 python app.py
 
-Flask API will be available at http://127.0.0.1:5000.
+Flask API will be available at https://loan-eligibility-1-ibry.onrender.com/.
 
 
 ### 🎨 Frontend Setup
