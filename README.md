@@ -101,12 +101,12 @@ npm run dev
 
 4. Result is returned and shown to the user in the interface.
 
-**📸 Screenshots (Add your screenshots here)**
-  Home Page Form	
+
+## Home Page Form	
 
 ![Screenshot 2025-06-25 115413](https://github.com/user-attachments/assets/7dd728c9-38b3-4549-bf25-055adf259482)
 
-Prediction Result
+## Prediction Result
 
 ![image](https://github.com/user-attachments/assets/62fc5a77-096e-463f-95d6-0a78f647df2c)
 
