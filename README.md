@@ -30,26 +30,29 @@ A web-based application that predicts loan eligibility based on applicant detail
 ---
 ## 📁 Folder Structure
 
+```
 loan-eligibility-predictor/
 │
-├── backend/ # Flask backend
-│ ├── app.py # Flask application
-│ ├── model.pkl # Trained ML model
-│ ├── requirements.txt # Backend dependencies
+├── backend/                # Flask backend
+│   ├── app.py              # Flask application
+│   ├── model.pkl           # Trained ML model
+│   ├── requirements.txt    # Backend dependencies
 │
-├── frontend/ # React + TypeScript frontend
-│ ├── index.html
-│ ├── package.json
-│ ├── tailwind.config.ts
-│ ├── tsconfig.json
-│ └── src/
-│ ├── App.tsx
-│ ├── main.tsx
-│ └── components/
-│ ├── InputForm.tsx
-│ └── Result.tsx
+├── frontend/               # React + TypeScript frontend
+│   ├── index.html
+│   ├── package.json
+│   ├── tailwind.config.ts
+│   ├── tsconfig.json
+│   └── src/
+│       ├── App.tsx
+│       ├── main.tsx
+│       └── components/
+│           ├── InputForm.tsx
+│           └── Result.tsx
 │
 └── README.md
+```
+
 
 
 ---
@@ -78,7 +81,7 @@ pip install -r requirements.txt
 # Run Flask server
 python app.py
 
-Flask API will be available at https://loan-eligibility-1-ibry.onrender.com/.
+Flask API will be available at http://127.0.0.1:5000.
 
 
 ### 🎨 Frontend Setup
@@ -104,26 +107,76 @@ npm run dev
 
 ## Home Page Form	
 
-![Screenshot 2025-06-25 115413](https://github.com/user-attachments/assets/7dd728c9-38b3-4549-bf25-055adf259482)
+![image](https://github.com/user-attachments/assets/37430a6b-64bb-4740-ad58-2ef25edc8b61)
+
 
 ## Prediction Result
 
-![image](https://github.com/user-attachments/assets/62fc5a77-096e-463f-95d6-0a78f647df2c)
-
-📊 Model Details
-• Model used: Logistic Regression (can be extended)
-• Accuracy: ~75% on test data
-• Trained using features like:
-  •  Gender, Married, Education
-  •  ApplicantIncome, CoapplicantIncome
-  •  Credit History, Loan Amount, Property Area
+![Screenshot 2025-06-25 124003](https://github.com/user-attachments/assets/433b5e50-4761-461f-a546-871ac2f94c0f)
 
 
-🚀 Deployment
-To deploy the app:
-   •  Use Gunicorn for Flask backend
-   •  Serve frontend with Vite build
-   •  Deploy on platforms like Render, Vercel (frontend), or Railway
+## 📊 Model Details
+
+- Model used: **Logistic Regression** (can be extended)
+- Accuracy: ~75% on test data
+- Trained using features like:
+  - Gender
+  - Married
+  - Education
+  - ApplicantIncome
+  - CoapplicantIncome
+  - Credit History
+  - Loan Amount
+  - Property Area
+
+## 🚀 Deployment
+
+This application is deployed with a **React + TypeScript frontend on Vercel** and a **Flask backend with ML model on Render**.
+
+---
+
+### 🔧 Backend Deployment (Render)
+
+1. Push your `backend/` folder to a separate GitHub repo or subfolder.
+2. Go to [https://render.com](https://render.com) and:
+   - Click **"New Web Service"**
+   - Connect your GitHub repo
+   - Set the root directory to `backend/`
+   - Choose **Python** environment
+   - Set the **Start Command** as:
+     ```bash
+     gunicorn app:app
+     ```
+3. Add environment variables if needed.
+4. Deploy! Render will provide you with a backend URL like: https://loan-eligibility-1-ibry.onrender.com/
+
+
+---
+
+### 🎨 Frontend Deployment (Vercel)
+
+1. Push your `frontend/` folder to GitHub.
+2. Go to [https://vercel.com](https://vercel.com) and:
+- Click **"New Project"**
+- Import your repo and choose `frontend/` as the root
+- Vercel auto-detects **Vite + React + TypeScript**
+3. After build, your app is live at: https://loan-eligibility-predictor-five.vercel.app/
+
+
+---
+
+### 🌐 Connecting Frontend to Backend
+
+In your frontend code (likely inside `api.ts` or `InputForm.tsx`), **replace the local Flask URL** with your deployed Render backend URL:
+
+```ts
+// Before (local)
+const response = await fetch("http://localhost:5000/predict", { ... })
+
+// After (deployed)
+const response = await fetch("https://loan-backend.onrender.com/predict", { ... })
+
+```
 
 🤝 Contributing
 Contributions are welcome! Here's how:
