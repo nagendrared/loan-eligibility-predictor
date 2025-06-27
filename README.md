@@ -107,7 +107,8 @@ npm run dev
 
 ## Home Page Form	
 
-![image](https://github.com/user-attachments/assets/37430a6b-64bb-4740-ad58-2ef25edc8b61)
+![Screenshot 2025-06-25 123917](https://github.com/user-attachments/assets/39cf11ad-d419-43a3-b9b6-5911411d0deb)
+
 
 
 ## Prediction Result
