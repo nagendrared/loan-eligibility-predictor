@@ -187,13 +187,16 @@ Contributions are welcome! Here's how:
 4. Push to GitHub: `git push origin feature-name`  
 5. Open a Pull Request
 
-📄 License
-This project is licensed under the MIT License.
 
 📬 Contact
 **Nagendra Reddy Keshavareddy**  
 📧 [LinkedIn](https://www.linkedin.com/in/keshavareddy-nagendra-reddy-672127256)  
 💻 [GitHub](https://github.com/nagendrared)
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 
 
